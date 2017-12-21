@@ -2,6 +2,7 @@ package bugfix.todo
 
 import android.content.Context
 import android.database.Cursor
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,12 @@ class TaskAdapter(context: Context, cursor: Cursor?, flag:Int): CursorAdapter(co
         val TITLE_COL_INDEX = cursor?.getColumnIndex((TaskContract.TaskEntry.COL_TITLE)) as Int
         val taskTitle = cursor?.getString(TITLE_COL_INDEX)
 
+        val ID = cursor?.getColumnIndex(TaskContract.TaskEntry._ID)
+        val id = cursor?.getString(ID)
+
+        Log.d("Load item:","\n" +
+                "\tid: ${id}\n" +
+                "\ttitle: ${taskTitle}\n")
         titleTextView?.text = taskTitle
     }
 

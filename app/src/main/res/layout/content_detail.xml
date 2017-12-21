@@ -11,7 +11,7 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
 
-    <TextView
+    <EditText
         android:id="@+id/detailTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,10 +19,16 @@
         android:text="Это заголовок"
         android:textSize="30sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/detailDiscription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="А это какойто большой текст который надо отобразить, ну ладно не очень он и большой"
         android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btnDetailSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task.button.save" />
 </LinearLayout>

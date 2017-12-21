@@ -8,6 +8,7 @@ import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.net.Uri
+import android.util.Log
 
 class TaskProvider : ContentProvider() {
     companion object {
@@ -96,7 +97,7 @@ class TaskProvider : ContentProvider() {
         var deleted: Int
 
         var customSelection = selection ?: "1"
-
+        Log.d("Delete item:", "Delete item from URI: ${uri?.toString()}\r\nUse select: ${customSelection.toString()}")
         when (match) {
             TASK -> deleted = db!!.delete(TaskContract.TaskEntry.TABLE_NAME, customSelection, selectionArgs)
             else -> throw UnsupportedOperationException("Unknown uri: $uri")
